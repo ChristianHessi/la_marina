@@ -108,7 +108,7 @@ class BatimentController extends AppBaseController
 
             return redirect(route('batiments.index'));
         }
-        $usr = $this->userRepository->hasRole('proprietaire');
+        $usr = User::role('proprietaire')->get();
         $users = [];
 
         foreach ($usr as $u){

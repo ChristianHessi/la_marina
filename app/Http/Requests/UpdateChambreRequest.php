@@ -26,6 +26,7 @@ class UpdateChambreRequest extends FormRequest
     public function rules()
     {
         $rules = Chambre::$rules;
+        $rules['code'] = 'bail|required|max:255|';
         
         return $rules;
     }

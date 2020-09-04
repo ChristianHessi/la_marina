@@ -65,7 +65,7 @@ class Locataire extends Model
         'nom' => 'bail|required|max:255',
         'tel' => 'bail|required|min:9|max:14',
         'email' => 'bail|email',
-        'date_entree' => 'bail|date|required',
+    'date_entree' => 'bail|date|required',
         'actif' => 'bail|required|boolean',
         'chambre_id' => 'bail|integer|required|unique:locataires'
     ];

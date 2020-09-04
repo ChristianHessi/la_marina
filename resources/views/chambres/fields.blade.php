@@ -1,23 +1,17 @@
 <!-- Code Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('code', 'Code:') !!}
+    {!! Form::label('code', 'Code') !!}<span class="text-red">*</span> :
     {!! Form::text('code', null, ['class' => 'form-control','maxlength' => 255]) !!}
-</div>
-
-<!-- Etage Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('etage', 'Etage:') !!}
-    {!! Form::number('etage', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Montant Loyer Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('montant_loyer', 'Montant Loyer:') !!}
+    {!! Form::label('montant_loyer', 'Montant Loyer') !!}<span class="text-red">*</span> :
     {!! Form::number('montant_loyer', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group col-sm-6">
-    {!! Form::label('batiment_id', 'Immeuble:') !!}
+    {!! Form::label('batiment_id', 'Immeuble') !!}<span class="text-red">*</span> :
     {!! Form::select('batiment_id', $batiments, isset($chambre)? $chambre->batiment->id : null, ['class' => 'form-control text-center', 'placeholder' => '-------> Choisir un Batiment <-------']) !!}
 </div>
 

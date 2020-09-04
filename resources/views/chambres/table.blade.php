@@ -3,10 +3,9 @@
         <thead>
             <tr>
                 <th>Code</th>
-        <th>Etage</th>
-        <th>Montant Loyer</th>
-        <th>Description</th>
-        <th>Batiment Id</th>
+                <th>Montant Loyer</th>
+                <th>Description</th>
+                <th>Batiment</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -14,10 +13,9 @@
         @foreach($chambres as $chambre)
             <tr>
                 <td>{{ $chambre->code }}</td>
-            <td>{{ $chambre->etage }}</td>
-            <td>{{ $chambre->montant_loyer }}</td>
-            <td>{{ $chambre->description }}</td>
-            <td>{{ $chambre->batiment->nom }}</td>
+                <td>{{ $chambre->montant_loyer }}</td>
+                <td>{{ $chambre->description }}</td>
+                <td>{{ $chambre->batiment->nom }}</td>
                 <td>
                     {!! Form::open(['route' => ['chambres.destroy', $chambre->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

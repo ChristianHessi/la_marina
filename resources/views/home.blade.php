@@ -13,12 +13,10 @@
             @foreach($chambres as $chambre)
                 <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
-                    <div class="small-box bg-green">
+                    <div class="small-box {{ ($chambre->locataires->where('actif', 1)->first()) ? 'bg-green' : ' bg-orange' }}">
                         <div class="inner">
                             <h3>{{ $chambre->code }}</h3>
 
-                            <p>{{ 'Etage '. $chambre->etage }}</p>
-                            <p>{{ ($chambre->locataires->where('actif', 1)->first()) ? 'Occupé' : 'Vide' }}</p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-hospital-o"></i>

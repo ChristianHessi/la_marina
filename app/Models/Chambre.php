@@ -29,7 +29,6 @@ class Chambre extends Model
 
     public $fillable = [
         'code',
-        'etage',
         'montant_loyer',
         'description',
         'batiment_id'
@@ -55,8 +54,7 @@ class Chambre extends Model
      * @var array
      */
     public static $rules = [
-        'code' => 'bail|required|max:255',
-        'etage' => 'bail|required|integer',
+        'code' => 'bail|required|max:255|unique:chambres',
         'montant_loyer' => 'bail|required|integer',
         'description' => 'bail|',
         'batiment_id' => 'bail|required|integer'

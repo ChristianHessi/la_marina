@@ -32,7 +32,9 @@ class Reparation extends Model
         'date',
         'montant',
         'observations',
-        'chambre_id'
+        'chambre_id',
+        'technicien',
+        'tel_technicien'
     ];
 
     /**
@@ -58,6 +60,9 @@ class Reparation extends Model
         'motif' => 'bail|required',
         'date' => 'bail|required|date',
         'montant' => 'bail|required|integer:unsigned',
+        'technicien' => 'bail|required|max:255',
+        'tel_technicien' => 'bail|required|min:9',
+        'observations' => 'bail|required'
     ];
 
     

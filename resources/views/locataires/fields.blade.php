@@ -19,7 +19,7 @@
 <!-- Chambre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('chambre_id', 'Chambre:') !!}
-    {!! Form::select('chambre_id', $chambres, isset($locataire) ? $locataire->id : $id, ['class' => 'form-control', 'placeholder' => '================= Choisir une chambre ===============', ($id) ? 'readonly':'']) !!}
+    {!! Form::select('chambre_id', $chambres, isset($locataire) ? $locataire->chambre->id : (isset($id) ? $id : null), ['class' => 'form-control', 'placeholder' => '================= Choisir une chambre ===============', (isset($id)) ? 'readonly':'']) !!}
 </div>
 
 <!-- Date Entree Field -->

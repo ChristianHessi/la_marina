@@ -111,8 +111,8 @@ class LoyerController extends AppBaseController
 
             return redirect(route('loyers.index'));
         }
-
-        return view('loyers.edit')->with('loyer', $loyer);
+        $locataire = $loyer->locataire;
+        return view('loyers.edit', compact('loyer', 'locataire'));
     }
 
     /**
@@ -137,7 +137,7 @@ class LoyerController extends AppBaseController
 
         Flash::success('Loyer updated successfully.');
 
-        return redirect(route('loyers.index'));
+        return redirect(route('chambres.show', $loyer->locataire->chambre->id));
     }
 
     /**
@@ -166,7 +166,14 @@ class LoyerController extends AppBaseController
         return redirect(route('loyers.index'));
     }
 
-    public function recus(){
-        return view('loyers.recu');
+    public function recus($id){
+        $loyer = $this->loyerRepository->find($id);
+        if (empty($loyer)) {
+            Flash::error('Loyer not found');
+
+            return redirect(route('loyers.index'));
+        }
+
+        return view('loyers.recu', compact('loyer'));
     }
 }

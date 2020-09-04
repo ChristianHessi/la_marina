@@ -3,8 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-{{--            Recu de {{ $loyer->locataire->nom .'- chambre '. $loyer->locataire->chambre->code .' du '. $loyer->debut .' au '. $loyer->fin }}--}}
-            Recu Locataire
+            Recu de Versement de Loyer
         </h1>
         <div class="row">
             <button class="btn btn-primary pull-right" onclick="imprimer('recu')">Imprimer</button>
@@ -17,8 +16,8 @@
                     <div id="entete">
                         <div class="text-center">
                             <h2 class="text-primary">Recu de paiement loyer</h2><br>
-                            <p>Période 10/08/2020 au 10/09/2020</p>
-                            <p>Chambre : 302</p>
+                            <p>Période : <b>{{ $loyer->debut->format('d/m/Y') .' au '. $loyer->fin->format('d/m/Y') }}</b></p>
+                            <p>Chambre : <b>{{ $loyer->locataire->chambre->code }}</b></p>
                         </div>
                         <div class="col-xs-6 contrat text-center">
                             <h4>Proprietaire</h4>
@@ -26,34 +25,32 @@
                         </div>
                         <div class="col-xs-6 contrat text-center">
                             <h4>Locataire</h4>
-                            <p>Christian hessi</p>
+                            <p>{{ $loyer->locataire->nom }}</p>
                         </div>
                     </div>
-                    <div id="tableau" class="contrat">
+                    <div id="tableau" class="contrat col-xs-offset-2 col-xs-8">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>Detail du règlement</th>
                                     <th>Montant</th>
-                                    <th>Observation</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Loyer</td>
-                                    <td>300000</td>
-                                    <td></td>
+                                    <td>{{ $loyer->montant }}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <br>
-                    <div>
+                    <div class="col-xs-12">
                         <p><strong>Je soussigné M. La marine SCI, proprietaire du logement designé ci-dessus, déclare avoir recu de la part du locataire la somme mentionnée au titre du loyer</strong> </p>
                         <br><br>
-                        <p>Fait a Douala le 10/08/2020</p>
+                        <p>Fait a Douala le <b>{{ $loyer->date_versement->format('d/m/Y') }}</b></p>
                         <br>
-                        <p class="text-right">Le bailleur <br>La MARINE SCI</p>
+                        <p class="text-right">Le bailleur <br><b>La MARINE SCI</b></p>
                     </div>
                 </div>
             </div>
@@ -71,8 +68,9 @@
             border: #000000 solid 1px;
         }
         #tableau{
-            margin-top: 100px;
-
+            margin-top: 50px;
+            padding: 0px ;
+            margin-bottom: 10px;
         }
         .table{
             margin-bottom: 0px;

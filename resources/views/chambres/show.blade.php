@@ -41,7 +41,7 @@
                         <tr>
                             <td>{{ $locataire->nom }}</td>
                             <td>{{ $locataire->date_entree->format('d/m/Y') }}</td>
-                            <td></td>
+                            <td>{{ $locataire->date_fin->format('d/m/Y') }}</td>
                             <td>{{ $locataire->tel }}</td>
                             <td>{{ $locataire->email }}</td>
                             <td>
@@ -102,8 +102,8 @@
                                     <td>{{ $reparation->motif }}</td>
                                     <td>{{ $reparation->date->format('d/m/Y') }}</td>
                                     <td>{{ $reparation->montant }}</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $reparation->technicien }}</td>
+                                    <td>{{ $reparation->tel_technicien }}</td>
                                     <td>
                                         <div class="input-group-btn">
                                             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -167,7 +167,7 @@
                                                 </li>
                                                 <li class="divider"></li>
                                                 <li>
-                                                    <a href="{{ route('loyers.recu') }}" class="" title="Imprimer Recu"><i class="glyphicon glyphicon-print"></i>Imprimer Recu</a>
+                                                    <a href="{{ route('loyers.recu', [$loyer->id]) }}" class="" title="Imprimer Recu"><i class="glyphicon glyphicon-print"></i>Imprimer Recu</a>
                                                 </li>
                                                 <li></li>
                                             </ul>

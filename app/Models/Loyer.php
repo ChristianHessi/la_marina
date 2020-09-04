@@ -61,5 +61,9 @@ class Loyer extends Model
         'fin' => 'bail|required|date',
     ];
 
+    public function locataire(){
+        return $this->belongsTo(Locataire::class);
+    }
+
     
 }
