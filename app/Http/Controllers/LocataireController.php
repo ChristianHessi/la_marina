@@ -68,10 +68,13 @@ class LocataireController extends AppBaseController
     public function store(CreateLocataireRequest $request)
     {
         $locInput = $request->except('montant', 'fin');
-        $locataire = $this->locataireRepository->create($locInput);
-        
+
         $loyInput = $request->only('montant', 'fin');
         $loyInput['date_versement'] = $loyInput['debut'] = $request['date_entree'];
+        $locInput['date_fin'] = $request['fin'];
+
+        $locataire = $this->locataireRepository->create($locInput);
+
         $loyInput['locataire_id'] = $locataire->id;
 
         $loyer = $this->loyerRepository->create($loyInput);

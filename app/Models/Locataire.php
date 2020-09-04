@@ -35,6 +35,7 @@ class Locataire extends Model
         'tel',
         'email',
         'date_entree',
+        'date_fin',
         'actif',
         'chambre_id'
     ];
@@ -50,6 +51,7 @@ class Locataire extends Model
         'tel' => 'string',
         'email' => 'string',
         'date_entree' => 'date',
+        'date_fin' => 'date',
         'actif' => 'boolean',
         'chambre_id' => 'integer'
     ];
