@@ -101,3 +101,15 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: "Bonjour le monde"
+            }
+        })
+    </script>
+@endpush

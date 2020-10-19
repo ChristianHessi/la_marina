@@ -71,4 +71,8 @@ class Chambre extends Model
     public function batiment(){
         return $this->belongsTo(Batiment::class);
     }
+
+    public function etatChambres(){
+        return $this->hasMany(EtatChambre::class);
+    }
 }

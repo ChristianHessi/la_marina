@@ -33,6 +33,10 @@ class LoyerController extends AppBaseController
     public function index(Request $request)
     {
         $loyers = $this->loyerRepository->all();
+        foreach($loyers as $loyer){
+            $loyer->chambre_id = $loyer->locataire->chambre->id;
+            $loyer->save();
+        }
 
         return view('loyers.index')
             ->with('loyers', $loyers);
@@ -67,6 +71,7 @@ class LoyerController extends AppBaseController
         }
         $input = $request->all();
         $input['locataire_id'] = $id;
+        $input['chambre_id'] = $locataire->chambre->id;
 
         $loyer = $this->loyerRepository->create($input);
 

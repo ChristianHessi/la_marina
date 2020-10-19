@@ -32,7 +32,8 @@ class Loyer extends Model
         'date_versement',
         'debut',
         'fin',
-        'locataire_id'
+        'locataire_id',
+        'chambre_id',
     ];
 
     /**
@@ -63,6 +64,10 @@ class Loyer extends Model
 
     public function locataire(){
         return $this->belongsTo(Locataire::class);
+    }
+
+    public function chambre(){
+        return $this->belongsTo(Chambre::class);
     }
 
     

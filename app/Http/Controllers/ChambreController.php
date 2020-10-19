@@ -64,7 +64,6 @@ class ChambreController extends AppBaseController
     public function store(CreateChambreRequest $request)
     {
         $input = $request->all();
-
         $chambre = $this->chambreRepository->create($input);
 
         Flash::success('Chambre saved successfully.');

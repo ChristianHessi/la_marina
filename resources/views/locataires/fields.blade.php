@@ -16,16 +16,12 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Chambre Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('chambre_id', 'Chambre:') !!}
-    {!! Form::select('chambre_id', $chambres, isset($locataire) ? $locataire->chambre->id : (isset($id) ? $id : null), ['class' => 'form-control', 'placeholder' => '================= Choisir une chambre ===============', (isset($id)) ? 'readonly':'']) !!}
-</div>
+<input type="hidden" id="chambre_id" name="chambre_id" class="form-control" value="{{ (isset($locataire)) ? $locataire->chambre->id : $chambre->id }}">
 
 <!-- Date Entree Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_entree', 'Date Entree:') !!}
-    {!! Form::text('date_entree', null, ['class' => 'form-control date','id'=>'date_entree']) !!}
+    <input type="date" id="date_entree" name="date_entree" class="form-control" v-model="date_entree" value="{{ (isset($locataire)) ? $locataire->date_entree->format('Y-m-d') : null }}">
 </div>
 
 <!-- Actif Field -->

@@ -25,7 +25,13 @@ class UpdateLocataireRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Locataire::$rules;
+        $rules = [
+            'nom' => 'bail|required|max:255',
+            'tel' => 'bail|required|min:9|max:14',
+            'email' => 'bail|email',
+            'date_entree' => 'bail|date|required',
+            'actif' => 'bail|required|boolean',
+        ];
         
         return $rules;
     }

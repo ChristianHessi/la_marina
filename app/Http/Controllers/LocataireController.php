@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateLocataireRequest;
 use App\Http\Requests\UpdateLocataireRequest;
+use App\Models\Chambre;
 use App\Repositories\ChambreRepository;
+use App\Repositories\EtatChambreRepository;
 use App\Repositories\LocataireRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\LoyerRepository;
@@ -18,12 +20,14 @@ class LocataireController extends AppBaseController
     private $locataireRepository;
     private $chambreRepository;
     private $loyerRepository;
+    private $etatChambreRepository;
 
-    public function __construct(LocataireRepository $locataireRepo, ChambreRepository $chambreRepository, LoyerRepository $loyerRepository)
+    public function __construct(LocataireRepository $locataireRepo, ChambreRepository $chambreRepository, EtatChambreRepository $etatChambreRepository, LoyerRepository $loyerRepository)
     {
         $this->locataireRepository = $locataireRepo;
         $this->chambreRepository = $chambreRepository;
         $this->loyerRepository = $loyerRepository;
+        $this->etatChambreRepository = $etatChambreRepository;
     }
 
     /**
@@ -36,9 +40,11 @@ class LocataireController extends AppBaseController
     public function index(Request $request)
     {
         $locataires = $this->locataireRepository->all();
+        $chambres = Chambre::whereHas('locataires', function ($q){
+            $q->where('actif', false);
+        })->get();
 
-        return view('locataires.index')
-            ->with('locataires', $locataires);
+        return view('locataires.index', compact('locataires', 'chambres'));
     }
 
     /**
@@ -46,16 +52,11 @@ class LocataireController extends AppBaseController
      *
      * @return Response
      */
-    public function create(Request $request)
+    public function create($id)
     {
-        $id = $request->id;
-        $cham = $this->chambreRepository->all();
-        $chambres = [];
+        $chambre = $this->chambreRepository->find($id);
 
-        foreach ($cham as $c){
-            $chambres[$c->id] = $c->code .' ('. $c->montant_loyer.')';
-        }
-        return view('locataires.create', compact('chambres', 'id'));
+        return view('locataires.create', compact('chambre'));
     }
 
     /**
@@ -67,7 +68,7 @@ class LocataireController extends AppBaseController
      */
     public function store(CreateLocataireRequest $request)
     {
-        $locInput = $request->except('montant', 'fin');
+        $locInput = $request->except('montant', 'fin', 'description');
 
         $loyInput = $request->only('montant', 'fin');
         $loyInput['date_versement'] = $loyInput['debut'] = $request['date_entree'];
@@ -75,14 +76,20 @@ class LocataireController extends AppBaseController
 
         $locataire = $this->locataireRepository->create($locInput);
 
+        $etatInput = $request->only('description', 'chambre_id');
+        $etatInput['type'] = 'Entrée';
+        $etatInput['locataire_id'] = $locataire->id;
+        $etatInput['date'] = $request['date_entree'];
+
+        $etatChambre = $this->etatChambreRepository->create($etatInput);
+
         $loyInput['locataire_id'] = $locataire->id;
 
         $loyer = $this->loyerRepository->create($loyInput);
 
-
         Flash::success('Locataire saved successfully.');
 
-        return redirect(route('locataires.index'));
+        return redirect(route('chambres.index', [$locataire->chambre_id]));
     }
 
     /**
@@ -149,7 +156,7 @@ class LocataireController extends AppBaseController
             return redirect(route('locataires.index'));
         }
 
-        $locataire = $this->locataireRepository->update($request->all(), $id);
+        $locataire = $this->locataireRepository->update($request->except('chambre_id'), $id);
 
         Flash::success('Locataire updated successfully.');
 
@@ -180,5 +187,39 @@ class LocataireController extends AppBaseController
         Flash::success('Locataire deleted successfully.');
 
         return redirect(route('locataires.index'));
+    }
+
+    public function closeBail($id){
+        $locataire = $this->locataireRepository->find($id);
+
+        if (empty($locataire)) {
+            Flash::error('Locataire not found');
+
+            return redirect(route('locataires.index'));
+        }
+
+        return view('locataires.close', compact('locataire'));
+    }
+
+    public function close($id, Request $request){
+        $locataire = $this->locataireRepository->find($id);
+
+        if (empty($locataire)) {
+            Flash::error('Locataire not found');
+
+            return redirect(route('locataires.index'));
+        }
+
+        $etatChambre = $this->etatChambreRepository->create([
+            'locataire_id' => $locataire->id,
+            'chambre_id' => $locataire->chambre->id,
+            'type' => 'Sortie',
+            'date' => $request->date,
+            'description' => $request->description
+        ]);
+
+        $locataire->actif = false;
+        $locataire->save();
+        return redirect(route('home'));
     }
 }

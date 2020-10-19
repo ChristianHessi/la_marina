@@ -30,4 +30,8 @@ class HomeController extends Controller
         $chambres = $this->chambreRepository->all();
         return view('home', compact('chambres'));
     }
+
+    public function dashboard(){
+        //
+    }
 }

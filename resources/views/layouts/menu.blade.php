@@ -6,9 +6,13 @@
     <a href="{{ route('chambres.index') }}"><i class="fa fa-edit"></i><span>Gestion des Chambres</span></a>
 </li>
 
-<li class="{{ Request::is('locataires*') ? 'active' : '' }}">
-    <a href="{{ route('locataires.index') }}"><i class="fa fa-edit"></i><span>Gestion des Locataires</span></a>
-</li>
+{{--<li class="{{ Request::is('dashboard') ? 'active' : '' }}">--}}
+    {{--<a href="{{ route('dashboard') }}"><i class="fa fa-edit"></i><span>Tableau de Bord</span></a>--}}
+{{--</li>--}}
+
+{{--<li class="{{ Request::is('locataires*') ? 'active' : '' }}">--}}
+    {{--<a href="{{ route('locataires.index') }}"><i class="fa fa-edit"></i><span>Gestion des Locataires</span></a>--}}
+{{--</li>--}}
 
 {{--<li class="{{ Request::is('loyers*') ? 'active' : '' }}">--}}
     {{--<a href="{{ route('loyers.index') }}"><i class="fa fa-edit"></i><span>Loyers</span></a>--}}

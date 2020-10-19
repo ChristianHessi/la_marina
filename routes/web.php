@@ -22,6 +22,7 @@ Route::prefix('')->middleware('auth')->group(function(){
 
     Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/dashboard', 'HomeController@dashboard');
 
     //Route::get('/home', 'HomeController@index')->middleware('verified');
 
@@ -29,7 +30,10 @@ Route::prefix('')->middleware('auth')->group(function(){
 
     Route::resource('chambres', 'ChambreController');
 
-    Route::resource('locataires', 'LocataireController');
+    Route::resource('locataires', 'LocataireController')->except('create');
+    Route::get('locataires/create/{id}', 'LocataireController@create')->name('locataires.create');
+    Route::get('locataires/close/{id}', 'LocataireController@closeBail')->name('locataires.closeBail');
+    Route::post('locataires/close/{id}', 'LocataireController@close')->name('locataires.close');
 
     Route::resource('loyers', 'LoyerController')->except('create', 'store');
     Route::get('loyers/create/{id}', 'LoyerController@create')->name('loyers.create');
@@ -44,6 +48,7 @@ Route::prefix('')->middleware('auth')->group(function(){
 
     Route::resource('roles', 'RoleController');
     Route::resource('users', 'UserController');
+
 
 });
 
