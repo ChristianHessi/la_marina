@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoyerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoyerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReparationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReparationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Batiment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Batiment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Chambre.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chambre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Reparation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reparation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chambres/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chambres/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loyers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loyers/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loyers/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loyers/fields.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reparations/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reparations/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reparations/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reparations/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/app/Models/Reparation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -59,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/chambres/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="363">
@@ -86,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReparationController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReparationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReparationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1037">
-              <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+            <state relative-caret-position="391">
+              <caret line="157" column="37" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -161,8 +148,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/reparations/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Reparation.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ReparationController.php" />
         <option value="$PROJECT_DIR$/resources/views/chambres/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ReparationController.php" />
       </list>
     </option>
   </component>
@@ -480,12 +467,12 @@
       <workItem from="1602723874666" duration="28668000" />
       <workItem from="1603183359891" duration="9822000" />
       <workItem from="1603324124573" duration="14693000" />
-      <workItem from="1603701760466" duration="1155000" />
+      <workItem from="1603701760466" duration="1577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233331000" />
+    <option name="totallyTimeSpent" value="233753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -824,14 +811,7 @@
     <entry file="file://$PROJECT_DIR$/app/Models/Reparation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReparationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1037">
-          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -839,6 +819,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="294" column="39" selection-start-line="294" selection-start-column="39" selection-end-line="294" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReparationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="157" column="37" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
         </state>
       </provider>
     </entry>
