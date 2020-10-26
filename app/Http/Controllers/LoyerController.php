@@ -64,7 +64,6 @@ class LoyerController extends AppBaseController
     {
         $locataire = $this->locataireRepository->find($id);
 
-        dd($request);
         if (empty($locataire)) {
             Flash::error('Loyer not found');
 

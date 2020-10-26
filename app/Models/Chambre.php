@@ -68,6 +68,10 @@ class Chambre extends Model
         return $this->morphMany('App\Models\Reparation', 'reparable');
     }
 
+    public function loyers(){
+        return $this->hasMany(Loyer::class);
+    }
+
     public function batiment(){
         return $this->belongsTo(Batiment::class);
     }
