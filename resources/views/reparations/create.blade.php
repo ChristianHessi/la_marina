@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Reparation chambre {{ $chambre->code }}
+            Reparation {{ ($model == 1) ? 'Chambre '.$bien->code : 'Immeuble '. $bien->nom}}
         </h1>
     </section>
     <div class="content">
@@ -11,7 +11,7 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => ['reparations.store', $chambre->id]]) !!}
+                    {!! Form::open(['route' => ['reparations.store', [$model, $bien->id]]]) !!}
 
                         @include('reparations.fields')
 

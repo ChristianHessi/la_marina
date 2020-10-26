@@ -1,27 +1,31 @@
-<!-- Montant Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('montant', 'Montant:') !!}
-    <input type="text" id="montant" name="montant" class="form-control" v-model="montant">
+<div class="row">
+    <!-- Montant Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('montant', 'Montant:') !!}
+        <input type="text" id="montant" name="montant" class="form-control" v-model="montant" @blur="check_montant">
+        <span class="text-danger" v-if="!is_good">Le montant versé ne peut être qu'un multiple de {{ $locataire->chambre->montant_loyer }}</span>
+    </div>
+
+    <!-- Date Versement Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('date_versement', 'Date Versement:') !!}
+        {!! Form::date('date_versement', null, ['class' => 'form-control date','id'=>'date_versement']) !!}
+    </div>
 </div>
 
-<!-- Date Versement Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('date_versement', 'Date Versement:') !!}
-    {!! Form::date('date_versement', null, ['class' => 'form-control date','id'=>'date_versement']) !!}
-</div>
+<div class="row">
+    <!-- Debut Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('debut', 'Debut:') !!}
+        <input type="date" id="debut" name="debut" class="form-control" v-model="debut" readonly>
+    </div>
 
-<!-- Debut Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('debut', 'Debut:') !!}
-    <input type="date" id="debut" name="debut" class="form-control" v-model="debut" readonly>
+    <!-- Fin Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('fin', 'Fin:') !!}
+        <input type="date" id="fin" name="fin" class="form-control"  :value="calculDate" readonly>
+    </div>
 </div>
-
-<!-- Fin Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('fin', 'Fin:') !!}
-    <input type="date" id="fin" name="fin" class="form-control"  :value="calculDate" readonly>
-</div>
-
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
@@ -40,15 +44,27 @@
             data: {
                 fin: null,
                 debut: moment('{!! $locataire->loyers->last()->fin->format('Y-m-d') !!}').format('Y-MM-DD'),
-                montant: {!! (isset($loyer)) ? $loyer->montant : 0 !!},
-                loyer: {{ $locataire->chambre->montant_loyer }}
+                montant: {!! (isset($loyer)) ? $loyer->montant : 'null' !!},
+                loyer: {{ $locataire->chambre->montant_loyer }},
+                is_good: true,
             },
             computed: {
                 calculDate (){
                     let date = (this.debut) ? moment('{!! $locataire->loyers->last()->fin->format('Y-m-d') !!}') : null
-                    let nb_mois = (this.montant != null) ? Math.floor(this.montant/this.loyer) : 2
+                    let nb_mois = (this.montant != null) ? Math.floor(this.montant/this.loyer) : 0
                     dateFin = (date != null) ? date.add(nb_mois, 'M'): null
                     return dateFin.format('Y-MM-DD')
+                }
+            },
+            methods:{
+                check_montant(){
+                    if(this.montant%this.loyer != 0){
+                        this.is_good = false;
+                        this.montant = null
+                    }
+                    else{
+                        this.is_good = true
+                    }
                 }
             }
         })

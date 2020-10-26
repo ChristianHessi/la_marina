@@ -85,7 +85,7 @@
                     <div class="box-header with-border">
                         <p class="box-title">Reparations</p>
                         <h4 class="pull-right">
-                            <a class="btn btn-info pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('reparations.create', [$chambre->id]) !!}"><i class="fa fa-plus"></i> Nouveau</a>
+                            <a class="btn btn-info pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('reparations.create', [1,$chambre->id]) !!}"><i class="fa fa-plus"></i> Nouveau</a>
                         </h4>
                     </div>
                     <div class="divider"></div>
@@ -251,25 +251,50 @@
                 responsive: true,
                 dom:'Blfrtip',
                 buttons:[
-                    'excel'
+                    {
+                        extend: 'excel',
+                        action: function(e, dt, button, config){
+                            config.filename = loyer_file_name;
+                            config.title = '{!! 'Chambre ' .$chambre->code. ' - ' .($locataire ? $locataire->nom : '')  !!}'
+                            $.fn.dataTable.ext.buttons.excelHtml5.action.call(this, e, dt, button, config);
+                        },
+                        exportOptions:{
+                            columns: [0,1,2,3]
+                        }
+                    }
                 ],
                 "bLengthChange" : false,
                 "order": [[1, "desc"]]
             });
+            var loyer_file_name = '{!! 'resumé loyer chambre '.$chambre->code .', occupée par '. (($locataire) ? $locataire->nom : null) !!}'
+
 
             table1.buttons().container().appendTo($('.pull-right.col-sm-6:eq(0)', table1.table().container() ))
 
             $('#versement-table_filter').addClass('pull-right')
+            var loyer_file_name = '{!! 'resumé loyers chambre '.$chambre->code .', occupée par '. (($locataire) ? $locataire->nom : null) !!}'
 
             var table = $('#reparation-table').DataTable({
                 responsive: true,
                 dom:'Blfrtip',
                 buttons:[
-                    'excel'
+                    {
+                        extend: 'excel',
+                        action: function(e, dt, button, config){
+                            config.filename = reparation_file_name;
+                            config.title = '{!! 'Réparations dans la chambre '. $chambre->code !!}'
+                            $.fn.dataTable.ext.buttons.excelHtml5.action.call(this, e, dt, button, config)
+
+                        },
+                        exportOptions:{
+                            columns: [0,1,2,3,4]
+                        }
+                    }
                 ],
                 "bLengthChange" : false,
+                "order": [[1, "desc"]],
             });
-
+            var reparation_file_name = '{!! 'resumé réparations chambre '.$chambre->code .', occupée par '. (($locataire) ? $locataire->nom : 'lamarina 1') !!}'
             table.buttons().container().appendTo($('.pull-right.col-sm-6:eq(0)', table.table().container() ))
             $('#reparation-table_filter').addClass('pull-right')
 

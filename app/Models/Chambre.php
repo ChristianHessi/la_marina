@@ -65,7 +65,7 @@ class Chambre extends Model
     }
 
     public function reparations(){
-        return $this->hasMany(Reparation::class);
+        return $this->morphMany('App\Models\Reparation', 'reparable');
     }
 
     public function batiment(){

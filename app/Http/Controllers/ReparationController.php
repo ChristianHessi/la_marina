@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateReparationRequest;
 use App\Http\Requests\UpdateReparationRequest;
+use App\Repositories\BatimentRepository;
 use App\Repositories\ChambreRepository;
 use App\Repositories\ReparationRepository;
 use App\Http\Controllers\AppBaseController;
@@ -16,11 +17,13 @@ class ReparationController extends AppBaseController
     /** @var  ReparationRepository */
     private $reparationRepository;
     private $chambreRepository;
+    private $batimentRepository;
 
-    public function __construct(ReparationRepository $reparationRepo, ChambreRepository $chambreRepository)
+    public function __construct(ReparationRepository $reparationRepo, ChambreRepository $chambreRepository, BatimentRepository $batimentRepository)
     {
         $this->reparationRepository = $reparationRepo;
         $this->chambreRepository = $chambreRepository;
+        $this->batimentRepository = $batimentRepository;
     }
 
     /**
@@ -43,10 +46,21 @@ class ReparationController extends AppBaseController
      *
      * @return Response
      */
-    public function create($id)
+    public function create($model, $id)
     {
-        $chambre = $this->chambreRepository->find($id);
-        return view('reparations.create', compact('chambre'));
+        if ($model == 1)
+            $bien = $this->chambreRepository->find($id);
+        elseif ($model == 2)
+            $bien = $this->batimentRepository->find($id);
+        else
+            $bien = [];
+
+        if (empty($bien)) {
+            Flash::error('La piece selectionnée n\'existe pas en base de donnée');
+
+            return redirect()->back();
+        }
+        return view('reparations.create', compact('bien', 'model'));
     }
 
     /**
@@ -56,24 +70,27 @@ class ReparationController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateReparationRequest $request, $id)
+    public function store(CreateReparationRequest $request, $model, $id)
     {
         $input = $request->all();
-        $chambre = $this->chambreRepository->find($id);
+        if ($model == 1)
+            $bien = $this->chambreRepository->find($id);
+        elseif ($model == 2)
+            $bien = $this->batimentRepository->find($id);
+        else
+            $bien = [];
+        if (empty($bien)) {
+            Flash::error('La piece selectionnée n\'existe pas en base de donnée');
 
-        if (empty($chambre)) {
-            Flash::error('Chambre Introuvable');
-
-            return redirect(route('home'));
+            return redirect()->back();
         }
 
-        $input['chambre_id'] = $id;
-
-        $reparation = $this->reparationRepository->create($input);
+        $reparation = $this->reparationRepository->makeModel()->fill($input);
+        $r = $bien->reparations()->save($reparation);
 
         Flash::success('Reparation saved successfully.');
 
-        return redirect(route('chambres.show', $chambre->id));
+        return redirect(route('home'));
     }
 
     /**
@@ -138,7 +155,7 @@ class ReparationController extends AppBaseController
 
         Flash::success('Reparation updated successfully.');
 
-        return redirect(route('chambres.show', $reparation->chambre_id));
+        return redirect(route('home'));
     }
 
     /**

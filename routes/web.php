@@ -41,8 +41,8 @@ Route::prefix('')->middleware('auth')->group(function(){
     Route::get('loyer/recu/{id}', 'LoyerController@recus')->name('loyers.recu');
 
     Route::resource('reparations', 'ReparationController')->except('create', 'store');
-    Route::get('reparations/create/{id}', 'ReparationController@create')->name('reparations.create');
-    Route::post('reparations/{id}', 'ReparationController@store')->name('reparations.store');
+    Route::get('reparations/create/{model}/{id}', 'ReparationController@create')->name('reparations.create');
+    Route::post('reparations/{model}/{id}', 'ReparationController@store')->name('reparations.store');
 
     Route::resource('permissions', 'PermissionController');
 

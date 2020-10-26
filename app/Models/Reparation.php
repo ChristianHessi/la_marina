@@ -32,7 +32,6 @@ class Reparation extends Model
         'date',
         'montant',
         'observations',
-        'chambre_id',
         'technicien',
         'tel_technicien'
     ];
@@ -65,5 +64,7 @@ class Reparation extends Model
         'observations' => 'bail|required'
     ];
 
-    
+    public function reparable(){
+        return $this->morphTo();
+    }
 }

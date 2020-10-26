@@ -6,7 +6,7 @@
         <th>Date</th>
         <th>Montant</th>
         <th>Observations</th>
-        <th>Chambre Id</th>
+        <th>Chambre</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -17,7 +17,7 @@
             <td>{{ $reparation->date }}</td>
             <td>{{ $reparation->montant }}</td>
             <td>{{ $reparation->observations }}</td>
-            <td>{{ $reparation->chambre_id }}</td>
+            <td>{{ ($reparation->reparable_type == 'App\Models\Chambre') ? $reparation->reparable->code : $reparation->reparable->nom }}</td>
                 <td>
                     {!! Form::open(['route' => ['reparations.destroy', $reparation->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

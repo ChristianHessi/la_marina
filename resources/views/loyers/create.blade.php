@@ -10,7 +10,7 @@
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
             <div class="box-body">
-                <div class="row">
+                <div class="">
                     {!! Form::open(['route' => ['loyers.store', $locataire->id]]) !!}
 
                         @include('loyers.fields')
