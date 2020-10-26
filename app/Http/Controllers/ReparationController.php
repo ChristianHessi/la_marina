@@ -37,6 +37,10 @@ class ReparationController extends AppBaseController
     {
         $reparations = $this->reparationRepository->all();
 
+        foreach ($reparations as $reparation){
+            $reparation->reparable_type = 'App\Models\Chambre';
+        }
+
         return view('reparations.index')
             ->with('reparations', $reparations);
     }

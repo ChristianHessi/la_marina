@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="" />
+    <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReparationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReparationController.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,8 +78,8 @@
       <file leaf-file-name="ReparationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReparationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="157" column="37" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
+            <state relative-caret-position="340">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -467,12 +469,12 @@
       <workItem from="1602723874666" duration="28668000" />
       <workItem from="1603183359891" duration="9822000" />
       <workItem from="1603324124573" duration="14693000" />
-      <workItem from="1603701760466" duration="1577000" />
+      <workItem from="1603701760466" duration="1827000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233753000" />
+    <option name="totallyTimeSpent" value="234003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -824,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReparationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="157" column="37" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
+        <state relative-caret-position="340">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
         </state>
       </provider>
     </entry>
