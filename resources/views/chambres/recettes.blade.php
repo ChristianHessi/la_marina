@@ -42,7 +42,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="loyer in loyers" v-if="after_debut(loyer.debut) && before_end(loyer.fin)">
+                            <tr v-for="loyer in loyers" v-if="after_debut(loyer.date_versement) && before_end(loyer.date_versement)">
                                 <td>@{{ formatDate(loyer.date_versement) }}</td>
                                 <td>@{{ loyer.montant }}</td>
                                 <td>@{{ formatDate(loyer.debut) + ' au ' + formatDate(loyer.fin) }}</td>
@@ -94,7 +94,7 @@
 
                 reset() {
                     this.filter_date_debut = '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree->format('Y-m-d') : null !!}'
-                    this.filter_date_fin = moment().year()+'-12-31'
+                    this.filter_date_fin = ''
                 }
             }
         })
