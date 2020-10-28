@@ -76,7 +76,6 @@ class LocataireController extends AppBaseController
         }
 
         $loc = $chambre->locataires->where('actif', 1);
-        dd(empty($loc));
         if (!empty($loc)) {
             Flash::error('La chambre '.$chambre->code .' est occupée');
 
