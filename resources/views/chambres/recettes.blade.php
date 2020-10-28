@@ -79,7 +79,7 @@
                 },
 
                 after_debut(date){
-                    if(this.filter_date_debut != null )
+                    if(this.filter_date_debut != "" )
                         return moment(date).isAfter(this.filter_date_debut)
                     else
                         return true

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="" />
+    <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +81,8 @@
       <file leaf-file-name="recettes.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/chambres/recettes.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+            <state relative-caret-position="-113">
+              <caret line="72" column="171" selection-start-line="72" selection-start-column="171" selection-end-line="72" selection-end-column="171" />
             </state>
           </provider>
         </entry>
@@ -170,12 +172,12 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/LoyerController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ChambreController.php" />
         <option value="$PROJECT_DIR$/resources/views/chambres/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chambres/depenses.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/batiments/depenses.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" />
       </list>
     </option>
   </component>
@@ -493,12 +495,12 @@
       <workItem from="1602723874666" duration="28668000" />
       <workItem from="1603183359891" duration="9822000" />
       <workItem from="1603324124573" duration="14693000" />
-      <workItem from="1603701760466" duration="49766000" />
+      <workItem from="1603701760466" duration="50191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281942000" />
+    <option name="totallyTimeSpent" value="282367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -853,8 +855,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chambres/recettes.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+        <state relative-caret-position="-113">
+          <caret line="72" column="171" selection-start-line="72" selection-start-column="171" selection-end-line="72" selection-end-column="171" />
         </state>
       </provider>
     </entry>
