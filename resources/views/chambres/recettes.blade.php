@@ -93,7 +93,7 @@
                 },
 
                 reset() {
-                    this.filter_date_debut = '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree : null !!}'
+                    this.filter_date_debut = '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree->format('Y-m-d') : null !!}'
                     this.filter_date_fin = moment().year()+'-12-31'
                 }
             }
