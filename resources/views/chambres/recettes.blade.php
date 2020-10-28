@@ -70,8 +70,8 @@
             el: '#app',
             data: {
                 loyers : {!! $chambre->loyers !!},
-                filter_date_debut: '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree : null !!}',
-                filter_date_fin: moment().year()+'-12-31',
+                filter_date_debut: '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree->format('Y-m-d') : null !!}',
+                filter_date_fin: '',
             },
             methods:{
                 formatDate(date){
@@ -86,7 +86,7 @@
                 },
 
                 before_end(date){
-                    if(this.filter_date_fin != null)
+                    if(this.filter_date_fin != "")
                         return moment(date).isBefore(this.filter_date_fin)
                     else
                         return true
