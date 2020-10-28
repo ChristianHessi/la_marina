@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LocataireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LocataireController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Locataire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Locataire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/locataires/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/locataires/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,25 +59,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocataireController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LocataireController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocataireController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
+            <state relative-caret-position="272">
+              <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/chambres/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/locataires/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="496">
+              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Locataire.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Models/Locataire.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fields.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/loyers/fields.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="68" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -85,15 +100,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Locataire.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Locataire.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="69" column="46" selection-start-line="69" selection-start-column="46" selection-end-line="69" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -171,10 +177,10 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Locataire.php" />
-        <option value="$PROJECT_DIR$/resources/views/locataires/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LocataireController.php" />
+        <option value="$PROJECT_DIR$/resources/views/locataires/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Locataire.php" />
       </list>
     </option>
   </component>
@@ -433,7 +439,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="loca&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LocataireController.php&#10;loc&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;app&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/layouts/app.blade.php&#10;chambr&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;home&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cham&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/ChambreController.php&#10;loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;w&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cha&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;loye&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;recu&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/loyers/recu.blade.php&#10;ba&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Batiment.php&#10;bat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/BatimentController.php&#10;lo&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;loy&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;locat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Locataire.php&#10;locataire&#9;null&#9;null&#10;login&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/auth/login.blade.php&#10;sho&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/chambres/show.blade.php&#10;Loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;batime&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/User.php" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Locataire.php&#10;loca&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LocataireController.php&#10;loc&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;app&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/layouts/app.blade.php&#10;chambr&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;home&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cham&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/ChambreController.php&#10;loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;w&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cha&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;loye&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;recu&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/loyers/recu.blade.php&#10;ba&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Batiment.php&#10;bat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/BatimentController.php&#10;lo&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;loy&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;locat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Locataire.php&#10;locataire&#9;null&#9;null&#10;login&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/auth/login.blade.php&#10;sho&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/chambres/show.blade.php&#10;Loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;batime&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/User.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -492,12 +498,12 @@
       <workItem from="1602723874666" duration="28668000" />
       <workItem from="1603183359891" duration="9822000" />
       <workItem from="1603324124573" duration="14693000" />
-      <workItem from="1603701760466" duration="53512000" />
+      <workItem from="1603701760466" duration="54739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285688000" />
+    <option name="totallyTimeSpent" value="286915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -638,13 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/loyers/fields.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="111" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
         </state>
       </provider>
     </entry>
@@ -822,22 +821,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Locataire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="69" column="46" selection-start-line="69" selection-start-column="46" selection-end-line="69" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chambres/create.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/locataires/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -848,8 +833,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocataireController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
+        <state relative-caret-position="272">
+          <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/loyers/fields.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="68" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/locataires/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Locataire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
         </state>
       </provider>
     </entry>

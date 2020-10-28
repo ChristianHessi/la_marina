@@ -79,7 +79,7 @@ class LocataireController extends AppBaseController
             $q->where('actif', 1);
         });
 
-        if (!empty($loc)) {
+        if (!$loc->first()) {
             Flash::error('La chambre '.$chambre->code .' est occupée');
 
             return redirect(route('home'));
@@ -106,7 +106,7 @@ class LocataireController extends AppBaseController
 
         Flash::success('Locataire saved successfully.');
 
-        return redirect(route('chambres.index', [$locataire->chambre_id]));
+        return redirect(route('chambres.show', [$locataire->chambre_id]));
     }
 
     /**

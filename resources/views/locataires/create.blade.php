@@ -19,7 +19,7 @@
 
                     <div class="form-group col-sm-6">
                         {!! Form::label('montant ', 'Montant Versé:') !!}
-                        <input type="text" id="montant" name="montant" class="form-control" v-model="montant">
+                        <input type="text" id="montant" name="montant" class="form-control" v-model="montant" @blur="check_montant">
                     </div>
                     <div class="form-group col-sm-6">
                         {!! Form::label('fin', 'Date de fin:') !!}
@@ -60,6 +60,17 @@
                     let date = (this.date_entree) ? moment(this.date_entree) : null
                     let nb_mois = (this.montant != null) ? Math.floor(this.montant/this.loyer) : 0
                     return (date != null) ? date.add(nb_mois, 'M').format('Y-MM-DD') : null
+                }
+            },
+            methods:{
+                check_montant(){
+                    if(this.montant%this.loyer != 0){
+                        this.is_good = false;
+                        this.montant = null
+                    }
+                    else{
+                        this.is_good = true
+                    }
                 }
             }
         })
