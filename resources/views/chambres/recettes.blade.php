@@ -70,7 +70,7 @@
             el: '#app',
             data: {
                 loyers : {!! $chambre->loyers !!},
-                filter_date_debut: '{!! $chambre->locataires->where('actif', 1)->first()->date_entree !!}',
+                filter_date_debut: '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree : null !!}',
                 filter_date_fin: moment().year()+'-12-31 00:00:00',
             },
             methods:{
@@ -93,7 +93,7 @@
                 },
 
                 reset() {
-                    this.filter_date_debut = '{!! $chambre->locataires->where('actif', 1)->first()->date_entree !!}'
+                    this.filter_date_debut = '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree : null !!}'
                     this.filter_date_fin = moment().year()+'-12-31 00:00:00'
                 }
             }
