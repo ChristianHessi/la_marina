@@ -111,10 +111,16 @@
             methods: {
                 locataire_en_cours(locataires){
                     let loc = ""
-                    locataires.forEach((item, index) =>{
-                        loc = (item.actif) ? item.nom : "Non occupée"
-                    })
-                    return loc
+                    if(locataires.length) {
+                        locataires.forEach((item, index) => {
+                            // console.log(item)
+                            loc = (item.actif) ? item.nom : "Non occupée"
+                        })
+                        return loc
+                    }
+                    else {
+                        return "Non occupée"
+                    }
                 },
 
                 after_debut(date){

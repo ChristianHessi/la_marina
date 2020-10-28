@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/batiments/depenses.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/chambres/depenses.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChambreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChambreController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
@@ -55,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="203" column="11" selection-start-line="166" selection-start-column="4" selection-end-line="203" selection-end-column="11" />
+            <state relative-caret-position="343">
+              <caret line="113" column="42" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -179,12 +173,12 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/LoyerController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ChambreController.php" />
         <option value="$PROJECT_DIR$/resources/views/chambres/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chambres/depenses.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/batiments/depenses.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -502,12 +496,12 @@
       <workItem from="1602723874666" duration="28668000" />
       <workItem from="1603183359891" duration="9822000" />
       <workItem from="1603324124573" duration="14693000" />
-      <workItem from="1603701760466" duration="48730000" />
+      <workItem from="1603701760466" duration="49483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280906000" />
+    <option name="totallyTimeSpent" value="281659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -829,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="203" column="11" selection-start-line="166" selection-start-column="4" selection-end-line="203" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chambres/recettes.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -864,6 +851,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="31" column="24" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="113" column="42" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
         </state>
       </provider>
     </entry>
