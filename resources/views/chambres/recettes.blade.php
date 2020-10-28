@@ -38,6 +38,7 @@
                                 <td>Date de versement</td>
                                 <td>Montant</td>
                                 <td>Periode</td>
+                                <td>Versé par</td>
                                 <td>Recu par</td>
                             </tr>
                             </thead>
@@ -46,6 +47,7 @@
                                 <td>@{{ formatDate(loyer.date_versement) }}</td>
                                 <td>@{{ loyer.montant }}</td>
                                 <td>@{{ formatDate(loyer.debut) + ' au ' + formatDate(loyer.fin) }}</td>
+                                <td>@{{ loyer.locataire.nom }}</td>
                                 <td></td>
                             </tr>
                             </tbody>
@@ -70,8 +72,8 @@
             el: '#app',
             data: {
                 loyers : {!! $chambre->loyers !!},
-                filter_date_debut: '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree->format('Y-m-d') : null !!}',
-                filter_date_fin: '',
+                filter_date_debut: null,
+                filter_date_fin: null,
             },
             methods:{
                 formatDate(date){
@@ -79,22 +81,22 @@
                 },
 
                 after_debut(date){
-                    if(this.filter_date_debut != "" )
+                    if(this.filter_date_debut != null )
                         return moment(date).isAfter(this.filter_date_debut)
                     else
                         return true
                 },
 
                 before_end(date){
-                    if(this.filter_date_fin != "")
+                    if(this.filter_date_fin != null)
                         return moment(date).isBefore(this.filter_date_fin)
                     else
                         return true
                 },
 
                 reset() {
-                    this.filter_date_debut = '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree->format('Y-m-d') : null !!}'
-                    this.filter_date_fin = ''
+                    this.filter_date_debut = null
+                    this.filter_date_fin = null
                 }
             }
         })
@@ -122,6 +124,7 @@
                 }
             ],
             "bLengthChange" : false,
+            "order": [[0, "desc"]]
         });
 
         {{--        var loyer_file_name = '{!! 'resumé loyer Batiment' !!}';--}}
