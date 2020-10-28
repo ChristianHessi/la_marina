@@ -51,8 +51,8 @@
       <file leaf-file-name="LocataireController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocataireController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+            <state relative-caret-position="85">
+              <caret line="77" column="55" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -496,12 +496,12 @@
       <workItem from="1602723874666" duration="28668000" />
       <workItem from="1603183359891" duration="9822000" />
       <workItem from="1603324124573" duration="14693000" />
-      <workItem from="1603701760466" duration="55690000" />
+      <workItem from="1603701760466" duration="55970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287866000" />
+    <option name="totallyTimeSpent" value="288146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -852,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocataireController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+        <state relative-caret-position="85">
+          <caret line="77" column="55" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
         </state>
       </provider>
     </entry>
