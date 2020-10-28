@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateChambreRequest;
 use App\Http\Requests\UpdateChambreRequest;
 use App\Models\Batiment;
+use App\Models\Chambre;
 use App\Repositories\BatimentRepository;
 use App\Repositories\ChambreRepository;
 use App\Http\Controllers\AppBaseController;
@@ -165,5 +166,27 @@ class ChambreController extends AppBaseController
         Flash::success('Chambre deleted successfully.');
 
         return redirect(route('chambres.index'));
+    }
+
+    public function show_depenses($id){
+        $chambre = Chambre::with(['reparations'])->find($id);
+        if (empty($chambre)) {
+            Flash::error('Chambre not found');
+
+            return redirect(route('chambres.index'));
+        }
+
+        return view('chambres.depenses', compact('chambre'));
+    }
+
+    public function show_recettes($id){
+        $chambre = Chambre::with('loyers.locataire')->find($id);
+        if (empty($chambre)) {
+            Flash::error('Chambre not found');
+
+            return redirect(route('chambres.index'));
+        }
+
+        return view('chambres.recettes', compact('chambre'));
     }
 }

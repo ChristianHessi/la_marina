@@ -1,3 +1,7 @@
+<li class="{{ Request::is('dashboard') ? 'active' : '' }}">
+    <a href="{{ route('dashboard') }}"><i class="fa fa-edit"></i><span>Etats</span></a>
+</li>
+
 <li class="{{ Request::is('batiments*') ? 'active' : '' }}">
     <a href="{{ route('batiments.index') }}"><i class="fa fa-edit"></i><span>Gestion des Batiments</span></a>
 </li>
@@ -6,9 +10,6 @@
     <a href="{{ route('chambres.index') }}"><i class="fa fa-edit"></i><span>Gestion des Chambres</span></a>
 </li>
 
-{{--<li class="{{ Request::is('dashboard') ? 'active' : '' }}">--}}
-    {{--<a href="{{ route('dashboard') }}"><i class="fa fa-edit"></i><span>Tableau de Bord</span></a>--}}
-{{--</li>--}}
 
 {{--<li class="{{ Request::is('locataires*') ? 'active' : '' }}">--}}
     {{--<a href="{{ route('locataires.index') }}"><i class="fa fa-edit"></i><span>Gestion des Locataires</span></a>--}}

@@ -37,7 +37,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="box box-primary">
-                    <div class="box-header">
+                    <div class="box-header with-border">
                         <div>
                             <div class="form-group col-xs-6">
                                 {!! Form::label('debut', 'Debut:') !!}
@@ -50,7 +50,8 @@
                         </div>
                     </div>
                     <div class="box-body">
-                        <table class="table table-striped table-bordered">
+                        <div class="content">
+                        <table class="table table-striped table-bordered" id="resume">
                             <thead>
                             <tr>
                                 <td>Code Chambre</td>
@@ -73,11 +74,11 @@
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right">
                                                 <li>
-                                                    <a @click="show_depenses(chambre)" title="Voir le details des dépenses"><i class="glyphicon glyphicon-edit"></i>Detais dépenses</a>
+                                                    <a @click="show_depenses(chambre)" title="Voir le details des dépenses"><i class="ion ion-cash"></i>Detais dépenses</a>
                                                 </li>
                                                 <li class="divider"></li>
                                                 <li>
-                                                    <a @click="show_recettes(chambre)" class="" title="Voir le details des versements"><i class="glyphicon glyphicon-print"></i>Détails Recettes</a>
+                                                    <a @click="show_recettes(chambre)" class="" title="Voir le details des versements"><i class="ion ion-cash"></i></i>Détails Recettes</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -85,6 +86,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,8 +104,8 @@
             el: '#app',
             data:{
                 chambres: {!! $chambres !!},
-                filter_date_debut: null,
-                filter_date_fin: null,
+                filter_date_debut: moment().year()+'-01-01',
+                filter_date_fin: moment().year()+'-12-31',
 
             },
             methods: {
@@ -112,16 +114,19 @@
                     locataires.forEach((item, index) =>{
                         loc = (item.actif) ? item.nom : "Non occupée"
                     })
+                    return loc
                 },
 
-                after_debut : (date) => {
-                    if(this.filter_date_debut != null )
+                after_debut(date){
+                    if(this.filter_date_debut != null ) {
                         return moment(date).isAfter(this.filter_date_debut)
-                    else
+                    }
+                    else {
                         return true
+                    }
                 },
 
-                before_end : (date) => {
+                before_end(date){
                     if(this.filter_date_fin != null)
                         return moment(date).isBefore(this.filter_date_fin)
                     else
@@ -130,28 +135,70 @@
 
                 depenses(reparations){
                     let montant = 0;
+                    ref = this
                     reparations.forEach(function (item, index) {
-                        montant += (this.after_debut(item.date) && this.before_end(item.date)) ? item.montant : 0
+                        montant += (ref.after_debut(item.date) && ref.before_end(item.date)) ? item.montant : 0
                     })
                     return montant;
                 },
 
                 recettes(loyers){
                     let montant = 0;
+                    ref = this
                     loyers.forEach(function (item, index) {
-                        montant += (this.after_debut(item.date_versement) && this.before_end(item.date_versement)) ? item.montant : 0
+                        montant += (ref.after_debut(item.date_versement) && ref.before_end(item.date_versement)) ? item.montant : 0
                     })
                     return montant
                 },
 
                 show_depenses(chambre){
-                    //
+                    let link = 'http://' + window.location.host +'/chambres/'+ chambre.id +'/depenses'
+                    window.location.href = link
                 },
 
                 show_recettes(chambre){
-                    //
+                    let link = 'http://' + window.location.host +'/chambres/'+ chambre.id +'/recettes'
+                    window.location.href = link
                 },
             },
         })
     </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/datatables.min.js"></script>
+    <script>
+
+        var table1 = $('#resume').DataTable({
+            responsive: true,
+            dom:'Blfrtip',
+            buttons:[
+                {
+                    extend: 'excel',
+                    action: function(e, dt, button, config){
+                        config.filename = loyer_file_name;
+                        config.title = 'Résumé Batiment';
+                        $.fn.dataTable.ext.buttons.excelHtml5.action.call(this, e, dt, button, config);
+                    },
+                    exportOptions:{
+                        columns: [0,1,2,3]
+                    }
+                }
+            ],
+            "bLengthChange" : false,
+        });
+
+{{--        var loyer_file_name = '{!! 'resumé loyer Batiment' !!}';--}}
+        table1.buttons().container().appendTo($('.pull-right.col-sm-6:eq(0)', table1.table().container() ))
+
+    </script>
 @endpush
+@section('css')
+    <style>
+        .dataTables_filter {
+            width: 50%;
+            float: right;
+            text-align: right;
+        }
+    </style>
+@endsection

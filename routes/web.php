@@ -22,13 +22,15 @@ Route::prefix('')->middleware('auth')->group(function(){
 
     Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/dashboard', 'HomeController@dashboard');
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
     //Route::get('/home', 'HomeController@index')->middleware('verified');
 
     Route::resource('batiments', 'BatimentController');
 
     Route::resource('chambres', 'ChambreController');
+    Route::get('chambres/{id}/depenses', 'ChambreController@show_depenses')->name('chambre.show_depenses');
+    Route::get('chambres/{id}/recettes', 'ChambreController@show_recettes')->name('chambre.show_recettes');
 
     Route::resource('locataires', 'LocataireController')->except('create');
     Route::get('locataires/create/{id}', 'LocataireController@create')->name('locataires.create');
