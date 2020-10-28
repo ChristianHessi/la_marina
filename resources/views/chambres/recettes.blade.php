@@ -15,7 +15,7 @@
             </div>
         @endif
     </section>
-    <div class="content">
+    <div class="container-fluid">
         <div class="col-md-12">
             <div class="row">
                 <div class="box box-primary">
@@ -71,7 +71,7 @@
             data: {
                 loyers : {!! $chambre->loyers !!},
                 filter_date_debut: '{!! ($chambre->locataires->where('actif', 1)->first() != null) ? $chambre->locataires->where('actif', 1)->first()->date_entree : null !!}',
-                filter_date_fin: moment().year()+'-12-31 00:00:00',
+                filter_date_fin: moment().year()+'-12-31',
             },
             methods:{
                 formatDate(date){

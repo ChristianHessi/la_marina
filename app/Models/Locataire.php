@@ -67,7 +67,7 @@ class Locataire extends Model
         'email' => 'bail|email',
         'date_entree' => 'bail|date|required',
         'actif' => 'bail|required|boolean',
-        'chambre_id' => 'bail|integer|required|unique:locataires'
+        'chambre_id' => 'bail|integer|required'
     ];
 
     public function chambre(){

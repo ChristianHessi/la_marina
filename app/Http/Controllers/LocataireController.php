@@ -68,6 +68,23 @@ class LocataireController extends AppBaseController
      */
     public function store(CreateLocataireRequest $request)
     {
+        $chambre = $this->chambreRepository->find($request->input('chambre_id'));
+        if (empty($chambre)) {
+            Flash::error('Chambre not found');
+
+            return redirect(route('home'));
+        }
+
+        $loc = $chambre->locataires->where('locataires', function ($q){
+            $q->where('actif', 1);
+        });
+
+        if (!empty($loc)) {
+            Flash::error('La chambre '.$chambre->code .' est occupée');
+
+            return redirect(route('home'));
+        }
+
         $locInput = $request->except('montant', 'fin', 'description');
 
         $loyInput = $request->only('montant', 'fin');

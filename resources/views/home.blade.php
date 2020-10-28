@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="content">
+    @include('flash::message')
     @include('adminlte-templates::common.errors')
     <div class="">
         <div class="col-xs-12">
