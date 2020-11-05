@@ -102,7 +102,8 @@
                 },
 
                 getBien(reparation){
-                    let reparable = (reparation.reparable_type == 'App\Models\Batiment') ? 'Batiment' : reparation.reparable.code
+                    str = "Entretien general";
+                    let reparable = (reparation.reparable_type != 'App\Models\Batiment') ? reparation.reparable.code : "Entretien general"
                     return reparable
                 }
             }

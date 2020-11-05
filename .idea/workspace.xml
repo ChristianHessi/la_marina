@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb72948e-5a83-44c8-b0af-7a3805589cf5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Batiment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Batiment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/batiments/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/batiments/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chambres/depenses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chambres/depenses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chambres/recettes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chambres/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chambres/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/batiments/show_depenses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/batiments/show_depenses.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reparations/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reparations/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/batiments/table.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="533">
-              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+              <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -76,20 +68,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="118" column="71" selection-start-line="118" selection-start-column="71" selection-end-line="118" selection-end-column="71" />
+            <state relative-caret-position="170">
+              <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChambreController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChambreController.php">
+      <file leaf-file-name="BatimentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BatimentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+            <state relative-caret-position="224">
+              <caret line="174" column="36" selection-start-line="174" selection-start-column="36" selection-end-line="174" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_depenses.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/batiments/show_depenses.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="105" column="112" selection-start-line="105" selection-start-column="112" selection-end-line="105" selection-end-column="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+              <folding>
+                <element signature="e#40#64#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,25 +111,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReparationController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-697">
-              <caret line="76" column="56" lean-forward="true" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/chambres/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="165" column="89" selection-start-line="165" selection-start-column="89" selection-end-line="165" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reparation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Reparation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <caret line="76" column="56" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -125,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/chambres/depenses.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
-              <caret line="73" column="18" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="73" selection-end-column="18" />
+              <caret line="73" column="18" selection-start-line="71" selection-start-column="16" selection-end-line="73" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -183,12 +178,12 @@
         <option value="$PROJECT_DIR$/resources/views/chambres/depenses.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Batiment.php" />
         <option value="$PROJECT_DIR$/resources/views/batiments/show_recettes.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" />
-        <option value="$PROJECT_DIR$/resources/views/batiments/show_depenses.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/batiments/table.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/reparations/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BatimentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/batiments/show_depenses.blade.php" />
       </list>
     </option>
   </component>
@@ -447,7 +442,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="rep&#9;null&#9;null&#10;b&#9;null&#9;null&#10;batim&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/BatimentController.php&#10;ho&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/HomeController.php&#10;loc&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LocataireController.php&#10;loca&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LocataireController.php&#10;app&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/layouts/app.blade.php&#10;chambr&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;home&#9;null&#9;null&#10;web&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cham&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/ChambreController.php&#10;loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;w&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cha&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;loye&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;recu&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/loyers/recu.blade.php&#10;ba&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Batiment.php&#10;bat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/BatimentController.php&#10;lo&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;loy&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;locat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Locataire.php&#10;locataire&#9;null&#9;null&#10;login&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/auth/login.blade.php&#10;sho&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/chambres/show.blade.php&#10;Loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;batime&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/User.php" />
+    <property name="SearchEverywhereHistoryKey" value="home&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/HomeController.php&#10;rep&#9;null&#9;null&#10;b&#9;null&#9;null&#10;batim&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/BatimentController.php&#10;ho&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/HomeController.php&#10;loc&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LocataireController.php&#10;loca&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LocataireController.php&#10;app&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/layouts/app.blade.php&#10;chambr&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;web&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cham&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/ChambreController.php&#10;loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;w&#9;FILE&#9;file://C:/laragon/www/la_marina/routes/web.php&#10;cha&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Chambre.php&#10;loye&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;recu&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/loyers/recu.blade.php&#10;ba&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Batiment.php&#10;bat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/BatimentController.php&#10;lo&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;loy&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Http/Controllers/LoyerController.php&#10;locat&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Locataire.php&#10;locataire&#9;null&#9;null&#10;login&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/auth/login.blade.php&#10;sho&#9;FILE&#9;file://C:/laragon/www/la_marina/resources/views/chambres/show.blade.php&#10;Loyer&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/Loyer.php&#10;batime&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/laragon/www/la_marina/app/Models/User.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -508,12 +503,12 @@
       <workItem from="1603324124573" duration="14693000" />
       <workItem from="1603701760466" duration="58447000" />
       <workItem from="1603900953831" duration="4933000" />
-      <workItem from="1604323075934" duration="35821000" />
+      <workItem from="1604323075934" duration="37581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331377000" />
+    <option name="totallyTimeSpent" value="333137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -753,16 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#40#64#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chambres/recettes.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -798,31 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BatimentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/batiments/show_depenses.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="31" column="119" selection-start-line="31" selection-start-column="119" selection-end-line="31" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChambreController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1173">
-          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
         </state>
       </provider>
     </entry>
@@ -843,7 +807,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/batiments/table.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -857,21 +821,52 @@
     <entry file="file://$PROJECT_DIR$/resources/views/chambres/depenses.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="73" column="18" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="73" selection-end-column="18" />
+          <caret line="73" column="18" selection-start-line="71" selection-start-column="16" selection-end-line="73" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReparationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-697">
-          <caret line="76" column="56" lean-forward="true" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
+          <caret line="76" column="56" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="31" column="119" selection-start-line="31" selection-start-column="119" selection-end-line="31" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="e#40#64#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="118" column="71" selection-start-line="118" selection-start-column="71" selection-end-line="118" selection-end-column="71" />
+        <state relative-caret-position="170">
+          <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BatimentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="174" column="36" selection-start-line="174" selection-start-column="36" selection-end-line="174" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/batiments/show_depenses.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="105" column="112" selection-start-line="105" selection-start-column="112" selection-end-line="105" selection-end-column="112" />
         </state>
       </provider>
     </entry>

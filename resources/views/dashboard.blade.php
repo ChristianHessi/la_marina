@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <a href="#">
+                <a href="{{ route('batiments.show_depenses', $batiment->id) }}">
                     <div class="info-box">
                         <span class="info-box-icon bg-red"><i class="ion ion-cash"></i></span>
 
@@ -31,7 +31,7 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <a href="#">
+                <a href="{{ route('batiments.show_recettes', $batiment->id) }}">
                 <div class="info-box">
                     <span class="info-box-icon bg-green"><i class="ion ion-cash"></i></span>
 

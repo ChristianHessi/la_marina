@@ -172,7 +172,7 @@ class BatimentController extends AppBaseController
     }
 
     public function show_depenses($id){
-        $batiment = Batiment::with(['reparations.chambre', 'chambres.reparations'])->where('id', $id)->first();
+        $batiment = Batiment::with(['chambres.reparations'])->where('id', $id)->first();
         $reparations = Reparation::with('reparable')->get();
 
 //        dd($reparations);
