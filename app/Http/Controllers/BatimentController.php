@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateBatimentRequest;
 use App\Http\Requests\UpdateBatimentRequest;
+use App\Models\Batiment;
+use App\Models\Reparation;
 use App\Models\User;
 use App\Repositories\BatimentRepository;
 use App\Http\Controllers\AppBaseController;
@@ -167,5 +169,34 @@ class BatimentController extends AppBaseController
         Flash::success('Batiment deleted successfully.');
 
         return redirect(route('batiments.index'));
+    }
+
+    public function show_depenses($id){
+        $batiment = Batiment::with(['reparations.chambre', 'chambres.reparations'])->where('id', $id)->first();
+        $reparations = Reparation::with('reparable')->get();
+
+//        dd($reparations);
+
+        if (empty($batiment)) {
+            Flash::error('Batiment not found');
+
+            return redirect(route('batiments.index'));
+        }
+
+        return view('batiments.show_depenses', compact('batiment', 'reparations'));
+    }
+
+    public function show_recettes($id){
+        $batiment = Batiment::with(['loyers.chambre', 'loyers.locataire'])->where('id', $id)->first();
+
+//        dd($batiment->loyers);
+
+        if (empty($batiment)) {
+            Flash::error('Batiment not found');
+
+            return redirect(route('batiments.index'));
+        }
+
+        return view('batiments.show_recettes', compact('batiment'));
     }
 }

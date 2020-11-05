@@ -163,7 +163,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($locataire->loyers as $loyer)
+                            @foreach($locataire->loyers->where('chambre_id', $chambre->id) as $loyer)
                                 <tr>
                                     <td>{{ $loyer->montant }}</td>
                                     <td>{{ $loyer->date_versement->format('d/m/Y') }}</td>
@@ -273,7 +273,7 @@
 
             $('#versement-table_filter').addClass('pull-right')
             var loyer_file_name = '{!! 'resumé loyers chambre '.$chambre->code .', occupée par '. (($locataire) ? $locataire->nom : null) !!}'
-
+²
             var table = $('#reparation-table').DataTable({
                 responsive: true,
                 dom:'Blfrtip',

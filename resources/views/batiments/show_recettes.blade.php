@@ -2,16 +2,11 @@
 
 @section('content')
     <section class="content-header">
-        <h1>
-            Resumé des dépenses dans la chambre {{ $chambre->code }}
-        </h1>
-        @if($chambre->locataires->where('actif', 1)->first())
-            <h3 class="">
-                Locataire actuel : {{ $chambre->locataires->where('actif', 1)->first()->nom }}
-            </h3>
-        @else
-            false
-        @endif
+        <div>
+            <h1>
+                Resumé des recettes du batiment {{ $batiment->nom }}
+            </h1>
+        </div>
     </section>
     <div class="container-fluid">
         <div class="col-md-12">
@@ -32,24 +27,27 @@
                     <div class="box-body">
                         <table class="table table-striped table-bordered" id="resume">
                             <thead>
-                                <tr>
-                                    <td>Désignation</td>
-                                    <td>Date</td>
-                                    <td>Description de la dépense</td>
-                                    <td>Validé par</td>
-                                    <td>Montant</td>
-                                </tr>
+                            <tr>
+                                <td>Chambre</td>
+                                <td>Date de versement</td>
+                                <td>Montant</td>
+                                <td>Periode</td>
+                                <td>Versé par</td>
+                            </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="reparation in reparations" v-if="after_debut(reparation.date) && before_end(reparation.date)">
-                                    <td>@{{ reparation.motif }}</td>
-                                    <td>@{{ formatDate(reparation.date) }}</td>
-                                    <td>@{{ reparation.observations }}</td>
-                                    <td></td>
-                                    <td>@{{ reparation.montant }}</td>
-                                </tr>
+                            <tr v-for="loyer in loyers" v-if="after_debut(loyer.date_versement) && before_end(loyer.date_versement)">
+                                <td>@{{ loyer.chambre.code }}</td>
+                                <td>@{{ formatDate(loyer.date_versement) }}</td>
+                                <td>@{{ loyer.montant }}</td>
+                                <td>@{{ formatDate(loyer.debut) + ' au ' + formatDate(loyer.fin) }}</td>
+                                <td>@{{ loyer.locataire.nom }}</td>
+                            </tr>
                             </tbody>
                         </table>
+                            <div>
+                                <h4 class="text-right"><b>Total Loyers percus :</b> @{{ recettes(loyers) }}</h4>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -64,7 +62,7 @@
         const app = new Vue({
             el: '#app',
             data: {
-                reparations : {!! $chambre->reparations !!},
+                loyers:{!! $batiment->loyers !!},
                 filter_date_debut: moment().year()+'-01-01',
                 filter_date_fin: moment().year()+'-12-31',
             },
@@ -85,6 +83,18 @@
                         return moment(date).isBefore(this.filter_date_fin)
                     else
                         return true
+                },
+
+                recettes(loyers){
+                    //retourne le total loyers du locataire en cours
+                    if (loyers != undefined) {
+                        let montant = 0;
+                        ref = this
+                        loyers.forEach(function (item, index) {
+                            montant += (ref.after_debut(item.date_versement) && ref.before_end(item.date_versement)) ? item.montant : 0
+                        })
+                        return montant
+                    }
                 },
 
                 reset() {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Batiment;
 use App\Models\Chambre;
 use App\Repositories\ChambreRepository;
 use App\Repositories\LoyerRepository;
@@ -41,9 +42,10 @@ class HomeController extends Controller
     public function dashboard(){
         $reparations = $this->reparationRepository->all();
         $loyers = $this->loyerRepository->all();
-        $chambres = Chambre::with(['locataires', 'reparations', 'loyers'])->get();
-//        dd($chambres);
+        $chambres = Chambre::with(['locataires.loyers', 'reparations', 'loyers'])->get();
+        $batiment = Batiment::with('reparations')->first();
+//        dd($batiment);
 
-        return view('dashboard', compact('reparations', 'loyers', 'chambres'));
+        return view('dashboard', compact('reparations', 'loyers', 'chambres', 'batiment'));
     }
 }

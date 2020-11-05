@@ -39,7 +39,6 @@
                                 <td>Montant</td>
                                 <td>Periode</td>
                                 <td>Versé par</td>
-                                <td>Recu par</td>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,14 +46,13 @@
                                 <td>@{{ formatDate(loyer.date_versement) }}</td>
                                 <td>@{{ loyer.montant }}</td>
                                 <td>@{{ formatDate(loyer.debut) + ' au ' + formatDate(loyer.fin) }}</td>
-                                <td>@{{ loyer.locataire.nom }}</td>
-                                <td></td>
+                                <td>@{{ locataire.nom }}</td>
                             </tr>
                             </tbody>
                         </table>
                         @if($chambre->locataires()->where('actif', true)->first())
                             <div>
-                                <h4 class="text-right"><b>Total Loyers versés par {{ $chambre->locataires()->where('actif', true)->first()->nom }} :</b> {{ $chambre->locataires()->where('actif', true)->first()->loyers->sum('montant') }}</h4>
+                                <h4 class="text-right"><b>Total Loyers versés par {{ $chambre->locataires()->where('actif', true)->first()->nom }} :</b> {{ $chambre->locataires()->where('actif', true)->first()->loyers->where('chambre_id', $chambre->id)->sum('montant') }}</h4>
                             </div>
                         @endif
                     </div>
@@ -71,7 +69,8 @@
         const app = new Vue({
             el: '#app',
             data: {
-                loyers : {!! $chambre->loyers !!},
+                loyers : {!! $chambre->locataires->where('actif', 1)->first()->loyers !!},
+                locataire: {!! $chambre->locataires->where('actif', 1)->first() !!},
                 filter_date_debut: null,
                 filter_date_fin: null,
             },

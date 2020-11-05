@@ -1,7 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-top: 10px">
+        <div class="row">
+            <div>
+                <div class="form-group col-xs-6">
+                    {!! Form::label('debut', 'Debut:') !!}
+                    <input type="date" name="id" id="fin" class="form-control" v-model="filter_date_debut" @keyup.escape="reset">
+                </div>
+                <div class="form-group col-xs-6">
+                    {!! Form::label('fin', 'Fin:') !!}
+                    <input type="date" name="id" id="fin" class="form-control" v-model="filter_date_fin" @keyup.escape="reset">
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="#">
@@ -10,7 +22,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text text-success"><h4>Total Dépenses</h4></span>
-                            <span class="info-box-number">{{ $reparations->sum('montant') }}<small> FCFA</small></span>
+                            <span class="info-box-number">@{{ depenses(reparations) }}<small> FCFA</small></span>
                             <span class="pull-right">cliquez pour detail</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -25,7 +37,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text text-success"><h4>Total Recettes</h4></span>
-                        <span class="info-box-number">{{ $loyers->sum('montant') }}<small> FCFA</small></span>
+                        <span class="info-box-number">@{{ recettes(loyers) }}<small> FCFA</small></span>
                         <span class="pull-right">cliquez pour detail</span>
                     </div>
                     <!-- /.info-box-content -->
@@ -34,20 +46,11 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="row">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <div>
-                            <div class="form-group col-xs-6">
-                                {!! Form::label('debut', 'Debut:') !!}
-                                <input type="date" name="id" id="fin" class="form-control" v-model="filter_date_debut" @keyup.escape="reset">
-                            </div>
-                            <div class="form-group col-xs-6">
-                                {!! Form::label('fin', 'Fin:') !!}
-                                <input type="date" name="id" id="fin" class="form-control" v-model="filter_date_fin" @keyup.escape="reset">
-                            </div>
-                        </div>
+                        <h4>ETAT DES REPARATIONS ET VERSEMENT EFFECTUEES DANS LES CHAMBRES</h4>
                     </div>
                     <div class="box-body">
                         <div class="content">
@@ -64,9 +67,9 @@
                             <tbody>
                                 <tr v-for="chambre in chambres">
                                     <td>@{{ chambre.code }}</td>
-                                    <td>@{{ locataire_en_cours(chambre.locataires) }}</td>
+                                    <td>@{{ locataire_en_cours(chambre.locataires).nom }}</td>
                                     <td>@{{ depenses(chambre.reparations) }}</td>
-                                    <td>@{{ recettes(chambre.loyers) }}</td>
+                                    <td>@{{ recettes(locataire_en_cours(chambre.locataires).loyers) }}</td>
                                     <td>
                                         <div class="input-group-btn">
                                             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -91,6 +94,35 @@
                 </div>
             </div>
         </div>
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h4>DEPENSES D'ENTRETIEN DU LE BATIMENT</h4>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-striped table-bordered" id="reparations_batiment">
+                            <thead>
+                            <tr>
+                                <td>Désignation</td>
+                                <td>Date</td>
+                                <td>Description</td>
+                                <td>Montant</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr v-for="reparation in batiment.reparations" v-if="after_debut(reparation.date) && before_end(reparation.date)">
+                                <td>@{{ reparation.motif }}</td>
+                                <td>@{{ formatDate(reparation.date) }}</td>
+                                <td>@{{ reparation.montant }}</td>
+                                <td>@{{ reparation.observations }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
@@ -104,17 +136,24 @@
             el: '#app',
             data:{
                 chambres: {!! $chambres !!},
+                batiment: {!! $batiment !!},
                 filter_date_debut: moment().year()+'-01-01',
                 filter_date_fin: moment().year()+'-12-31',
+                loyers: {!! $loyers !!},
+                reparations: {!! $reparations !!},
 
             },
             methods: {
+                formatDate(date){
+                    return moment(date).format("DD/MM/Y")
+                },
+
                 locataire_en_cours(locataires){
                     let loc = ""
                     if(locataires.length) {
                         locataires.forEach((item, index) => {
                             // console.log(item)
-                            loc = (item.actif) ? item.nom : "Non occupée"
+                            loc = (item.actif) ? item : "Non occupée"
                         })
                         return loc
                     }
@@ -149,12 +188,15 @@
                 },
 
                 recettes(loyers){
-                    let montant = 0;
-                    ref = this
-                    loyers.forEach(function (item, index) {
-                        montant += (ref.after_debut(item.date_versement) && ref.before_end(item.date_versement)) ? item.montant : 0
-                    })
-                    return montant
+                    //retourne le total loyers du locataire en cours
+                    if (loyers != undefined) {
+                        let montant = 0;
+                        ref = this
+                        loyers.forEach(function (item, index) {
+                            montant += (ref.after_debut(item.date_versement) && ref.before_end(item.date_versement)) ? item.montant : 0
+                        })
+                        return montant
+                    }
                 },
 
                 show_depenses(chambre){
@@ -166,6 +208,11 @@
                     let link = 'http://' + window.location.host +'/chambres/'+ chambre.id +'/recettes'
                     window.location.href = link
                 },
+
+                reset() {
+                    this.filter_date_debut = moment().year()+'-01-01'
+                    this.filter_date_fin = moment().year()+'-12-31'
+                }
             },
         })
     </script>
@@ -175,7 +222,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/datatables.min.js"></script>
     <script>
 
-        var table1 = $('#resume').DataTable({
+        var table1 = $('#resume, #reparations_batiment').DataTable({
             responsive: true,
             dom:'Blfrtip',
             buttons:[

@@ -27,6 +27,9 @@ Route::prefix('')->middleware('auth')->group(function(){
     //Route::get('/home', 'HomeController@index')->middleware('verified');
 
     Route::resource('batiments', 'BatimentController');
+    Route::get('batiments/{id}/show_recettes', 'BatimentController@show_recettes')->name('batiments.show_recettes');
+    Route::get('batiments/{id}/show_depenses', 'BatimentController@show_depenses')->name('batiments.show_depenses');
+    Route::get('batiments/{id}/add_reparations', 'BatimentController@add_reparations')->name('batiments.add_reparations');
 
     Route::resource('chambres', 'ChambreController');
     Route::get('chambres/{id}/depenses', 'ChambreController@show_depenses')->name('chambre.show_depenses');

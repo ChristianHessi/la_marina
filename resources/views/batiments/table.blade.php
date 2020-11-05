@@ -1,4 +1,4 @@
-<div class="table-responsive">
+<div class="">
     <table class="table" id="batiments-table">
         <thead>
             <tr>
@@ -14,15 +14,26 @@
                 <td>{{ $batiment->nom }}</td>
             <td>{{ $batiment->adresse }}</td>
             <td>{{ $batiment->description }}</td>
-                <td>
-                    {!! Form::open(['route' => ['batiments.destroy', $batiment->id], 'method' => 'delete']) !!}
-                    <div class='btn-group'>
-{{--                        <a href="{{ route('batiments.show', [$batiment->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>--}}
-                        <a href="{{ route('batiments.edit', [$batiment->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
-                    </div>
-                    {!! Form::close() !!}
-                </td>
+            <td>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-info dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false">
+                        Action <span class="fa fa-caret-down"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a href="{{ route('batiments.edit', $batiment->id) }}" title="Modifier les détails du batiment"><i class="ion ion-edit"></i>Modifier</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ route('reparations.create', [2,$batiment->id]) }}" class="" title="Ajouter Depenses"><i class="ion ion-cash"></i></i>Ajouter dépense</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="text-center">
+                            {!! Form::button('<i class="glyphicon glyphicon-trash text-danger"></i> Effacer', ['type' => 'submit', 'class' => 'btn btn-link', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        </li>
+                    </ul>
+                </div>
+            </td>
             </tr>
         @endforeach
         </tbody>

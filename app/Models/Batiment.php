@@ -63,5 +63,9 @@ class Batiment extends Model
     public function reparations(){
         return $this->morphMany('App\Models\Reparation', 'reparable');
     }
+
+    public function loyers(){
+        return $this->hasManyThrough(Loyer::class, Chambre::class);
+    }
     
 }

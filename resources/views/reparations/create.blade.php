@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Reparation {{ ($model == 1) ? 'Chambre '.$bien->code : 'Immeuble '. $bien->nom}}
+            {{ ($model == 1) ? 'Réparation dans Chambre '.$bien->code : 'Dépense dans Immeuble '. $bien->nom}}
         </h1>
     </section>
     <div class="content">
