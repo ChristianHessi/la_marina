@@ -114,8 +114,8 @@
                             <tr v-for="reparation in batiment.reparations" v-if="after_debut(reparation.date) && before_end(reparation.date)">
                                 <td>@{{ reparation.motif }}</td>
                                 <td>@{{ formatDate(reparation.date) }}</td>
-                                <td>@{{ reparation.montant }}</td>
                                 <td>@{{ reparation.observations }}</td>
+                                <td>@{{ reparation.montant }}</td>
                             </tr>
                             </tbody>
                         </table>
