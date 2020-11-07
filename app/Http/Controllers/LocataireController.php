@@ -98,6 +98,8 @@ class LocataireController extends AppBaseController
         $etatChambre = $this->etatChambreRepository->create($etatInput);
 
         $loyInput['locataire_id'] = $locataire->id;
+        $loyInput['chambre_id'] = $chambre->id;
+        
 
         $loyer = $this->loyerRepository->create($loyInput);
 
