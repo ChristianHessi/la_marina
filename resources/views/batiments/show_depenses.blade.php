@@ -125,7 +125,7 @@
                     extend: 'excel',
                     action: function(e, dt, button, config){
                         config.filename = loyer_file_name;
-                        config.title = 'Résumé Batiment';
+                        config.title = 'DETAILS DEPENSES BATIMENT';
                         $.fn.dataTable.ext.buttons.excelHtml5.action.call(this, e, dt, button, config);
                     },
                     exportOptions:{
@@ -136,7 +136,7 @@
             "bLengthChange" : false,
         });
 
-        {{--        var loyer_file_name = '{!! 'resumé loyer Batiment' !!}';--}}
+                var loyer_file_name = '{!! 'DETAILS DEPENSES BATIMENT '. $batiment->nom !!}';
         table1.buttons().container().appendTo($('.pull-right.col-sm-6:eq(0)', table1.table().container() ))
 
     </script>

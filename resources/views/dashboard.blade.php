@@ -222,15 +222,15 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/datatables.min.js"></script>
     <script>
 
-        var table1 = $('#resume, #reparations_batiment').DataTable({
+        var table1 = $('#reparations_batiment').DataTable({
             responsive: true,
             dom:'Blfrtip',
             buttons:[
                 {
                     extend: 'excel',
                     action: function(e, dt, button, config){
-                        config.filename = loyer_file_name;
-                        config.title = 'Résumé Batiment';
+                        config.filename = reparation_file_name;
+                        config.title = 'Résumé Dépenses Batiment';
                         $.fn.dataTable.ext.buttons.excelHtml5.action.call(this, e, dt, button, config);
                     },
                     exportOptions:{
@@ -241,8 +241,30 @@
             "bLengthChange" : false,
         });
 
-{{--        var loyer_file_name = '{!! 'resumé loyer Batiment' !!}';--}}
+        var reparation_file_name = '{!! 'Résumé Dépenses Batiment '. $batiment->nom !!}';
         table1.buttons().container().appendTo($('.pull-right.col-sm-6:eq(0)', table1.table().container() ))
+
+        var table2 = $('#resume').DataTable({
+            responsive: true,
+            dom:'Blfrtip',
+            buttons:[
+                {
+                    extend: 'excel',
+                    action: function(e, dt, button, config){
+                        config.filename = loyer_file_name;
+                        config.title = 'ETAT DES REPARATIONS ET VERSEMENT EFFECTUEES DANS LES CHAMBRES';
+                        $.fn.dataTable.ext.buttons.excelHtml5.action.call(this, e, dt, button, config);
+                    },
+                    exportOptions:{
+                        columns: [0,1,2,3]
+                    }
+                }
+            ],
+            "bLengthChange" : false,
+        });
+
+        var loyer_file_name = '{!! 'ETAT DES REPARATIONS ET VERSEMENTS EFFECTUEES DANS LES CHAMBRES' !!}';
+        table2.buttons().container().appendTo($('.pull-right.col-sm-6:eq(0)', table1.table().container() ))
 
     </script>
 @endpush

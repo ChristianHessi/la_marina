@@ -129,7 +129,7 @@
             "bLengthChange" : false,
         });
 
-        {{--        var loyer_file_name = '{!! 'resumé loyer Batiment' !!}';--}}
+                var loyer_file_name = '{!! 'DETAILS DES VERSEMENTS LOYERS BATIMENT '. $batiment->nom !!}';
         table1.buttons().container().appendTo($('.pull-right.col-sm-6:eq(0)', table1.table().container() ))
 
     </script>
