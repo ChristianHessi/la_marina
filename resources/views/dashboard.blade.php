@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h4>ETAT DES REPARATIONS ET VERSEMENT EFFECTUEES DANS LES CHAMBRES</h4>
+                        <h4>ETAT DES REPARATIONS ET VERSEMENTS EFFECTUEES DANS LES CHAMBRES</h4>
                     </div>
                     <div class="box-body">
                         <div class="content">
@@ -98,7 +98,7 @@
             <div class="row">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h4>DEPENSES D'ENTRETIEN DU LE BATIMENT</h4>
+                        <h4>DEPENSES D'ENTRETIEN DU BATIMENT</h4>
                     </div>
                     <div class="box-body">
                         <table class="table table-striped table-bordered" id="reparations_batiment">
