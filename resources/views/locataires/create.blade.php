@@ -33,7 +33,7 @@
 
                     <div class="form-group col-sm-12 text-right">
                         {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
-                        <a href="{{ route('locataires.index') }}" class="btn btn-default">Cancel</a>
+                        <a href="{{ route('chambres.show', [$chambre->id]) }}" class="btn btn-default">Cancel</a>
                     </div>
                 </div>
             </div>
