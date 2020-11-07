@@ -38,7 +38,7 @@
                             </thead>
                             <tbody>
                             <tr v-for="reparation in reparations" v-if="after_debut(reparation.date) && before_end(reparation.date)">
-                                <td>@{{ getBien(reparation) }}</td>
+                                <td>@{{ (getBien(reparation) != undefined) ? getBien(reparation) : 'Entretien general' }}</td>
                                 <td>@{{ reparation.motif }}</td>
                                 <td>@{{ formatDate(reparation.date) }}</td>
                                 <td>@{{ reparation.montant }}</td>
@@ -92,6 +92,7 @@
                     ref = this
                     reparations.forEach(function (item, index) {
                         montant += (ref.after_debut(item.date) && ref.before_end(item.date)) ? item.montant : 0
+                        console.log(ref.getBien(item))
                     })
                     return montant;
                 },
@@ -102,8 +103,9 @@
                 },
 
                 getBien(reparation){
-                    str = "Entretien general";
-                    let reparable = (reparation.reparable_type != 'App\Models\Batiment') ? reparation.reparable.code : "Entretien general"
+                    str = "'Entretien general'";
+                    let reparable = (reparation.reparable_type != 'App\Models\Batiment') ? reparation.reparable.code : str
+
                     return reparable
                 }
             }
